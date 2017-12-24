@@ -1,0 +1,18 @@
+clone:
+  default:
+    image: plugins/git
+    skip_verify: true
+
+pipeline:
+  build:
+    image: jupyter/datascience-notebook
+
+  rancher:
+    image: peloton/drone-rancher
+    url: http://10.20.172.1:8080/v1
+    access_key: 740379490276E4325AFB
+    secret_key: z1wWwQXKH6ZKE9heiYcaniTQj6M1MJZGsbGgG79f
+    service: core/platform
+    docker_image: jupyter/datascience-notebook
+    confirm: true
+    timeout: 240
